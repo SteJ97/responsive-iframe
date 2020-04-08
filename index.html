@@ -11,11 +11,12 @@
 	<body>
 		<nav>
 			<div class="search">
-				<p id="size"></p>
+				
 				<div class="search_input">					
 					<input type="url" id="url" placeholder="Input URL..."/>
 					<input class="search_input__button" type="button" value="Search" onclick="search()" />
 				</div>
+				<p id="size"></p>
 				<ul class="search-btns">
 					<li>
 						<input class="search-btns__btn" id="size-1" type="button" value="Mobile" />
@@ -58,7 +59,7 @@
 				iframe.style = 'width: 1280px; height: 800px;';
 			});
 			$('#size-5').click(function () {
-				iframe.style = 'width: 1680px; height: 1050px; transform:scale(0.8); position:relative; top: -105px;';
+				iframe.style = 'width: 1680px; height: 1050px; transform:scale(0.8); position:relative; margin-top: -95px;';
 			});
 
 			setInterval(function sizeText() {
