@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<title>Document</title>
+		<link rel="stylesheet" href="main.css" />
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	</head>
+	<body>
+		<nav>
+			<div class="search">
+				<p id="size"></p>
+				<div class="search_input">
+					Input URL here:
+					<input type="url" id="url" />
+					<input type="button" value="Search" onclick="search()" />
+				</div>
+				<ul class="search-btns">
+					<li>
+						<input id="size-1" type="button" value="Mobile" />
+					</li>
+					<li>
+						<input id="size-2" type="button" value="Larger Mobile" />
+					</li>
+					<li>
+						<input id="size-3" type="button" value="Tablet" />
+					</li>
+					<li>
+						<input id="size-4" type="button" value="Laptop Small" />
+					</li>
+					<li>
+						<input id="size-5" type="button" value="Desktop" />
+					</li>
+				</ul>				
+			</div>
+		</nav>
+		<main>
+			<iframe src="" frameborder="0" id="iframe"></iframe>
+		</main>
+		<script>
+			var iframe = document.getElementById('iframe');
+
+			function search() {
+				iframe.src = document.getElementById('url').value;
+			}
+
+			$('#size-1').click(function () {
+				iframe.style = 'height: 667px; width: 375px;';
+			});
+			$('#size-2').click(function () {
+				iframe.style = 'width: 411px; height: 823px;';
+			});
+			$('#size-3').click(function () {
+				iframe.style = ' width: 1024px; height: 768px;';
+			});
+			$('#size-4').click(function () {
+				iframe.style = 'width: 1280px; height: 800px;';
+			});
+			$('#size-5').click(function () {
+				iframe.style = 'width: 1680px; height: 1050px; transform:scale(0.8); position:relative; left: -170px; top: -105px;';
+			});
+
+			setInterval(function sizeText() {
+				var size = document.getElementById('iframe');
+				var txt = 'Resolution: ' + 'Height: ' + size.offsetHeight + ' | ' + 'Width: ' + size.offsetWidth + 'px';
+				document.getElementById('size').innerHTML = txt;
+			}, 1);
+		</script>
+	</body>
+</html>
