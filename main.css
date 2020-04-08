@@ -23,7 +23,7 @@ main {
 	width: 1500px;
 }
 
-.search_input {	
+.search_input {
 	display: flex;
 	align-items: center;
 	background-color: white;
